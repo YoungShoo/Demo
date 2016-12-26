@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.shoo.demo.adapter.MyRecyclerAdapter;
 import com.shoo.demo.tester.Tester;
+import com.shoo.demo.adapter.MyRecyclerAdapter;
 
 /**
  * Created by Shoo on 16-11-6.
@@ -19,7 +19,7 @@ public class TRecyclerView extends Tester {
 
     @Override
     protected void test() {
-        final MyRecyclerView recyclerView = new MyRecyclerView(mActivity);
+        final RecyclerView recyclerView = new RecyclerView(mActivity);
         mActivity.setContentView(recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
         final MyRecyclerAdapter adapter = new MyRecyclerAdapter();

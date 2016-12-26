@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.shoo.demo.recyclerview.TRecyclerView;
+import com.shoo.demo.recyclerview.stack.TStackRecyclerView;
 import com.shoo.demo.rxjava.TokenManager;
 import com.shoo.demo.tester.Tester;
 
@@ -12,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+//        setContentView(R.layout.activity_main);
 
 //        Tester.test(TPercentLayout.class, this);
 //        Tester.test(TView.class, this);
@@ -21,8 +22,9 @@ public class MainActivity extends AppCompatActivity {
 //        Tester.test(TThreadLocal.class, this);
 //        Tester.test(TAdapterViewFlipper.class, this);
 //        TokenManager.test();
+//        Tester.test(TRecyclerView.class, this);
 
-        Tester.test(TRecyclerView.class, this);
+        TStackRecyclerView.test(this);
     }
 
     @Override

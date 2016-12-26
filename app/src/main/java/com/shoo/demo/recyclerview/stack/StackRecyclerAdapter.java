@@ -1,4 +1,4 @@
-package com.shoo.demo.adapter;
+package com.shoo.demo.recyclerview.stack;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.shoo.demo.adapter.MyViewHolder;
+import com.shoo.demo.recyclerview.SimpleViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by Shoo on 16-11-6.
  */
-public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder> implements View.OnClickListener {
+public class StackRecyclerAdapter extends RecyclerView.Adapter<SimpleViewHolder> implements View.OnClickListener {
 
     private int[] mColors = {
             android.R.color.holo_red_light,
@@ -27,9 +27,9 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder> implem
 
     private final List<Integer> mList = new ArrayList<>();
 
-    public MyRecyclerAdapter(){
+    public StackRecyclerAdapter(){
         for (int i = 0; i < 8; i++) {
-            mList.add(mColors[i % mColors.length - 1]);
+            mList.add(mColors[i % mColors.length]);
         }
     }
 
@@ -39,7 +39,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder> implem
     }
 
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public SimpleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         TextView textView = new TextView(context);
         textView.setLayoutParams(new ViewGroup.LayoutParams(/*ViewGroup.LayoutParams
@@ -48,11 +48,11 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder> implem
         textView.setText("list item");
         textView.setBackgroundColor(context.getResources().getColor(viewType));
         textView.setOnClickListener(this);
-        return new MyViewHolder(textView);
+        return new SimpleViewHolder(textView);
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, final int position) {
+    public void onBindViewHolder(SimpleViewHolder holder, final int position) {
     }
 
     @Override
