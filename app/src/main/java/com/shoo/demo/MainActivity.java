@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.shoo.demo.recyclerview.TRecyclerView;
 import com.shoo.demo.recyclerview.stack.TStackRecyclerView;
 import com.shoo.demo.rxjava.TokenManager;
+import com.shoo.demo.share.TCustomShare;
 import com.shoo.demo.tester.Tester;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,8 +24,9 @@ public class MainActivity extends AppCompatActivity {
 //        Tester.test(TAdapterViewFlipper.class, this);
 //        TokenManager.test();
 //        Tester.test(TRecyclerView.class, this);
+//        TStackRecyclerView.test(this);
 
-        TStackRecyclerView.test(this);
+        TCustomShare.test(this);
     }
 
     @Override
