@@ -3,8 +3,7 @@ package com.shoo.demo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.shoo.demo.drawable.TDrawablePadding;
-import com.shoo.demo.rxjava.TokenManager;
+import com.shoo.demo.drawable.TNinePatchDrawable;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,13 +22,14 @@ public class MainActivity extends AppCompatActivity {
 //        Tester.test(TRecyclerView.class, this);
 //        TStackRecyclerView.test(this);
 //        TCustomShare.test(this);
+//        TDrawablePadding.test(this);
 
-        TDrawablePadding.test(this);
+        TNinePatchDrawable.test(this);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        TokenManager.getInstance().shutDown();
+//        TokenManager.getInstance().shutDown();
     }
 }
