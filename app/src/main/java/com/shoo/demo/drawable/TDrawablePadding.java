@@ -18,12 +18,12 @@ public class TDrawablePadding {
 
     public static void test(Activity activity) {
         TextView textView = new TextView(activity);
-        textView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 1000));
+        textView.setLayoutParams(new ViewGroup.LayoutParams(500, 500));
         textView.setGravity(Gravity.CENTER_VERTICAL);
         textView.setText("Test Drawable Padding");
 
         testDrawablePadding(activity, textView);
-        testImageSpan(activity, textView);
+//        testImageSpan(activity, textView);
 
         activity.setContentView(textView);
     }
@@ -35,18 +35,20 @@ public class TDrawablePadding {
          * 而通过setBackground(Drawable)重新设置同一资源，Padding会重新设置；
          */
         // 1. 显示9图padding
-        textView.setBackgroundResource(R.drawable.wg_bg);
+        textView.setBackgroundResource(R.drawable.nine_patch_bg);
         // 2. 显示主动设置的padding
         textView.setPadding(0, 0, 0, 0);
         // 3. 背景资源相同，不会做任何操作
-        textView.setBackgroundResource(R.drawable.wg_bg);
+        textView.setBackgroundResource(R.drawable.nine_patch_bg);
 
         // 4. 以Drawable而非ResId方式重新设置背景，显示Drawable的padding
-        textView.setBackground(activity.getResources().getDrawable(R.drawable.wg_bg));
+        textView.setBackground(activity.getResources().getDrawable(R.drawable.nine_patch_bg));
         // 5. 显示主动设置的padding
-        textView.setPadding(0, 0, 0, 0);
+        textView.setPadding(10, 10, 10, 10);
         // 6. 以Drawable而非ResId方式重新设置背景，显示Drawable的padding
-        textView.setBackground(activity.getResources().getDrawable(R.drawable.wg_bg));
+        textView.setBackground(activity.getResources().getDrawable(R.drawable.nine_patch_bg));
+        // 7. 显示Drawable的padding，padding为0
+        textView.setBackground(activity.getResources().getDrawable(R.drawable.ic_launcher));
     }
 
     private static void testImageSpan(Activity activity, TextView textView) {
