@@ -1,6 +1,7 @@
 package com.shoo.demo.drawable;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -49,6 +50,7 @@ public class TDrawablePadding {
         textView.setBackground(activity.getResources().getDrawable(R.drawable.nine_patch_bg));
         // 7. 显示Drawable的padding，padding为0
         textView.setBackground(activity.getResources().getDrawable(R.drawable.ic_launcher));
+        textView.setBackgroundColor(Color.RED);
     }
 
     private static void testImageSpan(Activity activity, TextView textView) {

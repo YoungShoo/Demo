@@ -3,7 +3,7 @@ package com.shoo.demo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.shoo.demo.drawable.TDrawablePadding;
+import com.shoo.demo.webview.TSchemeIntentUrl;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,8 +22,12 @@ public class MainActivity extends AppCompatActivity {
 //        Tester.test(TRecyclerView.class, this);
 //        TStackRecyclerView.test(this);
 //        TCustomShare.test(this);
-        TDrawablePadding.test(this);
+//        TSystemUiFlags.test(this);
+//        TDrawablePadding.test(this);
 //        TNinePatchDrawable.test(this);
+//        TConcurrentModification.test();
+
+        TSchemeIntentUrl.test(this);
     }
 
     @Override
