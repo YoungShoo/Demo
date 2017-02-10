@@ -19,7 +19,7 @@ public class TRecyclerView extends Tester {
 
     @Override
     protected void test() {
-        final RecyclerView recyclerView = new RecyclerView(mActivity);
+        final RecyclerView recyclerView = new LoadMoreRecyclerView(mActivity);
         mActivity.setContentView(recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
         final MyRecyclerAdapter adapter = new MyRecyclerAdapter();

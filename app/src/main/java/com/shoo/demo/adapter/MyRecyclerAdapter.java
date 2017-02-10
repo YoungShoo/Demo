@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.shoo.demo.adapter.MyViewHolder;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +27,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyViewHolder> implem
 
     public MyRecyclerAdapter(){
         for (int i = 0; i < 8; i++) {
-            mList.add(mColors[i % mColors.length - 1]);
+            mList.add(mColors[i % (mColors.length - 1)]);
         }
     }
 
