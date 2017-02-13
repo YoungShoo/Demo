@@ -3,8 +3,7 @@ package com.shoo.demo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.shoo.demo.recyclerview.TRecyclerView;
-import com.shoo.demo.tester.Tester;
+import com.shoo.demo.retrofit.TRetrofit2;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 //        Tester.test(TThreadLocal.class, this);
 //        Tester.test(TAdapterViewFlipper.class, this);
 //        TokenManager.test();
-        Tester.test(TRecyclerView.class, this);
+//        Tester.test(TRecyclerView.class, this);
 //        TStackRecyclerView.test(this);
 //        TCustomShare.test(this);
 //        TSystemUiFlags.test(this);
@@ -29,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
 //        TConcurrentModification.test();
 //        TSchemeIntentUrl.test(this);
 //        TEnumeratedAnnotation.test();
+
+//        TGridView.test(this);
+
+        TRetrofit2.test();
     }
 
     @Override

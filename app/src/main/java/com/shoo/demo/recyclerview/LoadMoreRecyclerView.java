@@ -11,7 +11,7 @@ import android.view.ViewConfiguration;
 import android.widget.Toast;
 
 /**
- * Created by xiaoyuanxiu on 17-2-10.
+ * Created by Shoo on 17-2-10.
  */
 
 public class LoadMoreRecyclerView extends RecyclerView {

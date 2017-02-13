@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.webkit.WebView;
 
 /**
- * Created by xiaoyuanxiu on 17-1-24.
+ * Created by Shoo on 17-1-24.
  */
 
 public class TSchemeIntentUrl {

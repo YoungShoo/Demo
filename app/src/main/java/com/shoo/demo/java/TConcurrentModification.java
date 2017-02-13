@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by xiaoyuanxiu on 17-1-23.
+ * Created by Shoo on 17-1-23.
  */
 
 public class TConcurrentModification {

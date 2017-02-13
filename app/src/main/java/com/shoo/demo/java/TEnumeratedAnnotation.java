@@ -3,7 +3,7 @@ package com.shoo.demo.java;
 import static com.shoo.demo.java.ItemTypeDescriptor.TYPE_MUSIC;
 
 /**
- * Created by xiaoyuanxiu on 17-2-5.
+ * Created by Shoo on 17-2-5.
  */
 
 public class TEnumeratedAnnotation {

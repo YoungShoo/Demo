@@ -32,12 +32,12 @@ public class TextAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return mList.size();
+        return mList.size() * 2;
     }
 
     @Override
     public Object getItem(int position) {
-        return mList.get(position);
+        return mList.get(position % mList.size());
     }
 
     @Override
@@ -49,11 +49,11 @@ public class TextAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         Context context = parent.getContext();
         TextView textView = new TextView(context);
-        textView.setText(mList.get(position));
-        textView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+        textView.setText(mList.get(position % mList.size()));
+        textView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
         textView.setGravity(Gravity.CENTER);
-        textView.setBackgroundColor(context.getResources().getColor(mColors[position]));
+        textView.setBackgroundColor(context.getResources().getColor(mColors[position % mColors.length]));
         return textView;
     }
 }

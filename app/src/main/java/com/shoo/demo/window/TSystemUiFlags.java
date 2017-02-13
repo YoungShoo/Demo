@@ -12,7 +12,7 @@ import android.view.WindowManager;
 import com.shoo.demo.R;
 
 /**
- * Created by xiaoyuanxiu on 17-1-22.
+ * Created by Shoo on 17-1-22.
  */
 
 public class TSystemUiFlags {

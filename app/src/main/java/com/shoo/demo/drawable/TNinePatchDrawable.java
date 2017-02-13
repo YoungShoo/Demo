@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import com.shoo.demo.R;
 
 /**
- * Created by xiaoyuanxiu on 17-1-18.
+ * Created by Shoo on 17-1-18.
  */
 
 public class TNinePatchDrawable {
