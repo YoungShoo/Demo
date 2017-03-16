@@ -3,14 +3,14 @@ package com.shoo.demo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.shoo.demo.retrofit.TRetrofit2;
+import com.shoo.demo.java.TClassAndObjectLock;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
+        setContentView(R.layout.btn_in_frame_layout);
 
 //        Tester.test(TPercentLayout.class, this);
 //        Tester.test(TView.class, this);
@@ -28,10 +28,11 @@ public class MainActivity extends AppCompatActivity {
 //        TConcurrentModification.test();
 //        TSchemeIntentUrl.test(this);
 //        TEnumeratedAnnotation.test();
-
 //        TGridView.test(this);
+//        TRetrofit2.test();
 
-        TRetrofit2.test();
+        TClassAndObjectLock.test();
+
     }
 
     @Override

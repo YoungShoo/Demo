@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:background="@android:color/holo_red_dark"/>
+
+    <!-- 添加该处理，按钮才能正常显示在中间层，否则按钮将显示在最上层 -->
+    <!-- android:stateListAnimator="@null" -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_orange_dark"
+        android:stateListAnimator="@null"
+        android:text="Button between two ImageViews"/>
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="@android:color/holo_blue_dark"/>
+
+</FrameLayout>
