@@ -3,7 +3,6 @@ package com.shoo.demo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.shoo.demo.java.TClassAndObjectLock;
 import com.shoo.demo.java.TSuperAndExtends;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,10 +30,8 @@ public class MainActivity extends AppCompatActivity {
 //        TEnumeratedAnnotation.test();
 //        TGridView.test(this);
 //        TRetrofit2.test();
-
-        TClassAndObjectLock.test();
-
 //        TInitialOrder.test();
+//        TClassAndObjectLock.test();
 
         TSuperAndExtends.test();
     }

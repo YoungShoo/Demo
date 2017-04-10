@@ -24,6 +24,10 @@ public class TSuperAndExtends {
             apples.add(new Apple());
         }
 
+        for (int i = 0; i < 5; i++) {
+            redApples.add(new RedApple());
+        }
+
         /**
          * 总结：读地板类，写天花板类
          */
