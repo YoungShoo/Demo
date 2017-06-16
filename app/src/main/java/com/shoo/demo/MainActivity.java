@@ -3,14 +3,14 @@ package com.shoo.demo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.shoo.demo.java.TSuperAndExtends;
+import com.shoo.demo.rxjava.TOnSubscribeThread;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.btn_in_frame_layout);
+//        setContentView(R.layout.btn_in_frame_layout);
 
 //        Tester.test(TPercentLayout.class, this);
 //        Tester.test(TView.class, this);
@@ -32,8 +32,13 @@ public class MainActivity extends AppCompatActivity {
 //        TRetrofit2.test();
 //        TInitialOrder.test();
 //        TClassAndObjectLock.test();
+//        TSuperAndExtends.test();
+//        TVolley.test(this);
+//        TPicasso.test(this);
 
-        TSuperAndExtends.test();
+//        TExceptionStack.test();
+
+        TOnSubscribeThread.test();
     }
 
     @Override
