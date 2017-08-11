@@ -3,7 +3,7 @@ package com.shoo.demo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.shoo.demo.rxjava.TOnSubscribeThread;
+import com.shoo.demo.webview.TSchemeIntentUrl;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,10 +35,12 @@ public class MainActivity extends AppCompatActivity {
 //        TSuperAndExtends.test();
 //        TVolley.test(this);
 //        TPicasso.test(this);
-
 //        TExceptionStack.test();
+//        TOnSubscribeThread.test();
 
-        TOnSubscribeThread.test();
+//        TBroadcast.test(this);
+
+        TSchemeIntentUrl.test(this);
     }
 
     @Override
