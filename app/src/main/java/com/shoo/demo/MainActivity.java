@@ -3,7 +3,7 @@ package com.shoo.demo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.shoo.demo.webview.TSchemeIntentUrl;
+import com.shoo.demo.event.touch.TOverlapTouchEvent;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,7 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
 //        TBroadcast.test(this);
 
-        TSchemeIntentUrl.test(this);
+//        TSchemeIntentUrl.test(this);
+
+        TOverlapTouchEvent.test(this);
     }
 
     @Override
