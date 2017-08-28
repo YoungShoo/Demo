@@ -16,7 +16,7 @@ public class TView extends Tester {
 
     @Override
     protected void test() {
-        MyView myView = new MyView(mActivity);
+        TextBoundsView myView = new TextBoundsView(mActivity);
         myView.setBackgroundColor(mActivity.getResources().getColor(android.R.color.holo_red_light));
         myView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 600));
         mActivity.setContentView(myView);
