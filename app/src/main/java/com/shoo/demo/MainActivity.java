@@ -3,7 +3,7 @@ package com.shoo.demo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.shoo.demo.module.TBarrageView;
+import com.shoo.demo.remote.TRemoteBroadcast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,7 +42,9 @@ public class MainActivity extends AppCompatActivity {
 //        TOverlapTouchEvent.test(this);
 //        TTextBounds.test(this);
 
-        TBarrageView.test(this);
+//        TBarrageView.test(this);
+
+        TRemoteBroadcast.test(this);
     }
 
     @Override

@@ -35,6 +35,8 @@
 
         <receiver android:name=".components.broadcast.SBroadcastReceiver" />
 
+        <service android:name=".components.service.SService" />
+
     </application>
 
 </manifest>
