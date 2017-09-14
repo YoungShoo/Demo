@@ -3,7 +3,7 @@ package com.shoo.demo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.shoo.demo.remote.TRemoteBroadcast;
+import com.shoo.demo.components.service.TBindService;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
 //        TSchemeIntentUrl.test(this);
 //        TOverlapTouchEvent.test(this);
 //        TTextBounds.test(this);
-
 //        TBarrageView.test(this);
+//        TRemoteBroadcast.test(this);
 
-        TRemoteBroadcast.test(this);
+        TBindService.test(this);
     }
 
     @Override

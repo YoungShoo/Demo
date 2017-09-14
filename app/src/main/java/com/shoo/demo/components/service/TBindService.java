@@ -17,10 +17,57 @@ import java.util.concurrent.CountDownLatch;
 public class TBindService {
 
     private static final String TAG = "TBindService";
+    private static ServiceConnection sConn = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            Log.d(TAG, "onServiceConnected: thread = " + Thread.currentThread().getName() + ", service = " + service);
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+
+        }
+    };
 
     public static void test(final Activity activity) {
-        bindServiceDirectly(activity);
-//        bindServiceWidthLock(activity);
+//        bindServiceDirectly(activity);
+//        bindServiceWithLock(activity);
+        testServiceLifeCycle(activity);
+    }
+
+    private static void testServiceLifeCycle(final Activity activity) {
+        final Intent intent = new Intent(activity, SService.class);
+
+        /*
+        SService: onCreate() called
+        SService: onBind() called with: intent = [Intent { cmp=com.shoo.demo/.components.service.SService }]
+        SService: onStartCommand()
+        SService: onStart() called with: intent = [Intent { cmp=com.shoo.demo/.components.service.SService }], startId = [1]
+        SService: onUnbind() called with: intent = [Intent { cmp=com.shoo.demo/.components.service.SService }]
+        SService: onDestroy() called
+         */
+        /*
+        activity.bindService(intent, sConn, Context.BIND_AUTO_CREATE);
+        activity.startService(intent);
+        activity.stopService(intent);
+        activity.unbindService(sConn);
+        */
+
+        /*
+        SService: onCreate()
+        SService: onStartCommand()
+        SService: onStart() called with: intent = [Intent { cmp=com.shoo.demo/.components.service.SService }], startId = [1]
+        SService: onBind() called with: intent = [Intent { cmp=com.shoo.demo/.components.service.SService }]
+        SService: onUnbind() called with: intent = [Intent { cmp=com.shoo.demo/.components.service.SService }]
+        SService: onRebind() called: when service is still running and onUnbind() return true
+         */
+        activity.startService(intent);
+
+        activity.bindService(intent, sConn, Context.BIND_AUTO_CREATE);
+        activity.unbindService(sConn);
+        activity.bindService(intent, sConn, Context.BIND_AUTO_CREATE);
+
+        activity.stopService(intent);
     }
 
     private static void bindServiceDirectly(final Activity activity) {
@@ -36,24 +83,14 @@ public class TBindService {
                 TBindService: onServiceConnected: thread = main
                  */
                 Log.d(TAG, "test: thread = " + Thread.currentThread().getName());
-                activity.bindService(new Intent(activity, SService.class), new ServiceConnection() {
-                    @Override
-                    public void onServiceConnected(ComponentName name, IBinder service) {
-                        Log.d(TAG, "onServiceConnected: thread = " + Thread.currentThread().getName());
-                    }
-
-                    @Override
-                    public void onServiceDisconnected(ComponentName name) {
-
-                    }
-                }, Context.BIND_AUTO_CREATE);
+                activity.bindService(new Intent(activity, SService.class), sConn, Context.BIND_AUTO_CREATE);
 
                 Log.d(TAG, "test: last ...");
             }
         }.start();
     }
 
-    private static void bindServiceWidthLock(final Activity activity) {
+    private static void bindServiceWithLock(final Activity activity) {
         new Thread() {
             @Override
             public void run() {
