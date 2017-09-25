@@ -28,7 +28,13 @@
 
                 <data
                     android:scheme="shoo"
-                    android:host="com.shoo.demo" />
+                    android:host="demo.shoo.com" />
+                <data
+                    android:scheme="mz"
+                    android:host="example.shoo.com" />
+
+                <!-- works for mz://demo.shoo.com -->
+                <!--<data android:scheme="mz" />-->
             </intent-filter>
 
         </activity>

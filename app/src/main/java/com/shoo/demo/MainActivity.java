@@ -3,7 +3,7 @@ package com.shoo.demo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.shoo.demo.components.service.TBindService;
+import com.shoo.demo.webview.TSchemeIntentUrl;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
 //        TDrawablePadding.test(this);
 //        TNinePatchDrawable.test(this);
 //        TConcurrentModification.test();
-//        TSchemeIntentUrl.test(this);
 //        TEnumeratedAnnotation.test();
 //        TGridView.test(this);
 //        TRetrofit2.test();
@@ -38,13 +37,18 @@ public class MainActivity extends AppCompatActivity {
 //        TExceptionStack.test();
 //        TOnSubscribeThread.test();
 //        TBroadcast.test(this);
-//        TSchemeIntentUrl.test(this);
+        TSchemeIntentUrl.test(this);
 //        TOverlapTouchEvent.test(this);
 //        TTextBounds.test(this);
 //        TBarrageView.test(this);
 //        TRemoteBroadcast.test(this);
 
-        TBindService.test(this);
+//        TBindService.test(this);
+
+//        TSystemProperty.test(this);
+
+//        TNotification.test(this);
+
     }
 
     @Override
