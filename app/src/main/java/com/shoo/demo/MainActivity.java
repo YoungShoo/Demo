@@ -2,8 +2,9 @@ package com.shoo.demo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 
-import com.shoo.demo.webview.TSchemeIntentUrl;
+import com.shoo.demo.view.edittext.TEditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 //        TExceptionStack.test();
 //        TOnSubscribeThread.test();
 //        TBroadcast.test(this);
-        TSchemeIntentUrl.test(this);
+//        TSchemeIntentUrl.test(this);
 //        TOverlapTouchEvent.test(this);
 //        TTextBounds.test(this);
 //        TBarrageView.test(this);
@@ -49,6 +50,14 @@ public class MainActivity extends AppCompatActivity {
 
 //        TNotification.test(this);
 
+        TEditText.test(this);
+
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // key back event should be listened by overriding EditText.onKeyPreIme if ime is open
+        return super.onKeyDown(keyCode, event);
     }
 
     @Override
