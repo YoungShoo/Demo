@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 
-import com.shoo.demo.view.edittext.TEditText;
+import com.shoo.demo.rxjava.TRetryWhen;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,14 +43,14 @@ public class MainActivity extends AppCompatActivity {
 //        TTextBounds.test(this);
 //        TBarrageView.test(this);
 //        TRemoteBroadcast.test(this);
-
 //        TBindService.test(this);
-
 //        TSystemProperty.test(this);
-
 //        TNotification.test(this);
+//        TEditText.test(this);
 
-        TEditText.test(this);
+        TRetryWhen.test();
+
+//        TConcat.test();
 
     }
 
