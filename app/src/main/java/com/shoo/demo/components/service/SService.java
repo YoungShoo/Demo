@@ -3,8 +3,10 @@ package com.shoo.demo.components.service;
 import android.app.Service;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.os.Binder;
 import android.os.IBinder;
+import android.os.Process;
+import android.os.RemoteException;
+import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
@@ -19,11 +21,26 @@ public class SService extends Service {
 
     private static final String TAG = "SService";
 
+    private IRemoteService mRemoteService = new IRemoteService.Stub() {
+        @Override
+        public int getPid() throws RemoteException {
+            return Process.myPid();
+        }
+
+        @Override
+        public void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat, double aDouble, String aString) throws RemoteException {
+            Log.d(TAG, "basicTypes: anInt = [" + anInt + "], aLong = [" + aLong + "], aBoolean = [" + aBoolean + "], " +
+                    "aFloat = [" + aFloat + "], aDouble = [" + aDouble + "], aString = [" + aString + "]");
+            Log.d(TAG, "basicTypes: thread = " + Thread.currentThread().getName());
+            SystemClock.sleep(2000);
+        }
+    };
+
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
         Log.d(TAG, "onBind() called with: intent = [" + intent + "]");
-        return new Binder();
+        return mRemoteService.asBinder();
     }
 
     @Override

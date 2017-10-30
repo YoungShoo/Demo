@@ -41,7 +41,9 @@
 
         <receiver android:name=".components.broadcast.SBroadcastReceiver" />
 
-        <service android:name=".components.service.SService" />
+        <service android:name=".components.service.SService"
+            android:process=":remote"
+            />
 
     </application>
 
