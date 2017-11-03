@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 
-import com.shoo.demo.components.service.TBindService;
+import com.shoo.demo.network.TOkHttp;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,7 +50,9 @@ public class MainActivity extends AppCompatActivity {
 //        TRetryWhen.test();
 //        TConcat.test();
 
-        TBindService.test(this);
+//        TBindService.test(this);
+
+        TOkHttp.test();
     }
 
     @Override
