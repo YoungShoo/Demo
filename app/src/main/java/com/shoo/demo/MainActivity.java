@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 
-import com.shoo.demo.network.TOkHttp;
+import com.shoo.demo.widget.ratingbar.TRatingBar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
 //        TEditText.test(this);
 //        TRetryWhen.test();
 //        TConcat.test();
-
 //        TBindService.test(this);
+//        TOkHttp.test();
 
-        TOkHttp.test();
+        TRatingBar.test(this);
     }
 
     @Override
