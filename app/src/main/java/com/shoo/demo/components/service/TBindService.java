@@ -8,6 +8,7 @@ import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.os.Process;
 import android.os.RemoteException;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,9 @@ import android.widget.Button;
 import java.util.concurrent.CountDownLatch;
 
 /**
+ * IPC 客户端操作是阻塞的，就算没有返回值
+ * bindService / startService 是非阻塞的，不需要等待 onBind 回调
+ *
  * Created by Shoo on 17-9-13.
  */
 
@@ -76,17 +80,22 @@ public class TBindService {
                 super.run();
                 /*
                 非同步（阻塞）绑定
-
-                TBindService: test: thread = Thread-2942
-                TBindService: test: last ...
+                TBindService: test: thread = Thread-2679, time = 487901735
+                TBindService: test: last ...              time = 487901741
                 TBindService: onServiceConnected: thread = main
                  */
-                Log.d(TAG, "test: thread = " + Thread.currentThread().getName());
+                Log.d(TAG, "test: thread = " + Thread.currentThread().getName() + ", time = " + SystemClock.uptimeMillis());
                 Intent service = new Intent(activity, SService.class);
 //                activity.unbindService(sConn);
                 activity.bindService(service, sConn, Context.BIND_AUTO_CREATE);
 
-                Log.d(TAG, "test: last ...");
+                /*
+                非阻塞
+                TBindService: test: thread = Thread-2693, time = 488035899
+                TBindService: test: last ...              time = 488035924
+                */
+//                activity.startService(service);
+                Log.d(TAG, "test: last ... time = " + SystemClock.uptimeMillis());
             }
         }.start();
     }

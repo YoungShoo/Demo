@@ -39,7 +39,8 @@ public class SService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        Log.d(TAG, "onBind() called with: intent = [" + intent + "]");
+        Log.d(TAG, "onBind() called with: intent = [" + intent + "], time = " + SystemClock.uptimeMillis());
+        SystemClock.sleep(2000);
         return mRemoteService.asBinder();
     }
 
