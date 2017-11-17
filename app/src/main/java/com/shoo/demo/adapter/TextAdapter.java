@@ -21,6 +21,7 @@ public class TextAdapter extends BaseAdapter {
             android.R.color.holo_green_light,
             android.R.color.holo_blue_light,
             android.R.color.holo_orange_light,
+            android.R.color.holo_purple,
     };
 
     {
@@ -28,11 +29,22 @@ public class TextAdapter extends BaseAdapter {
         mList.add("second_item");
         mList.add("third_item");
         mList.add("fourth_item");
+        mList.add("fifth_item");
     }
 
     @Override
     public int getCount() {
-        return mList.size() * 2;
+        return mList.size() * 10;
+    }
+
+    @Override
+    public int getViewTypeCount() {
+        return mList.size();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position % mList.size();
     }
 
     @Override
@@ -51,7 +63,7 @@ public class TextAdapter extends BaseAdapter {
         TextView textView = new TextView(context);
         textView.setText(mList.get(position % mList.size()));
         textView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.MATCH_PARENT));
+                250));
         textView.setGravity(Gravity.CENTER);
         textView.setBackgroundColor(context.getResources().getColor(mColors[position % mColors.length]));
         return textView;

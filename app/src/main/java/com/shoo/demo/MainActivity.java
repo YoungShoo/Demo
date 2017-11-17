@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 
-import com.shoo.demo.widget.ratingbar.TRatingBar;
+import com.shoo.demo.widget.TListView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,7 +52,9 @@ public class MainActivity extends AppCompatActivity {
 //        TBindService.test(this);
 //        TOkHttp.test();
 
-        TRatingBar.test(this);
+//        TRatingBar.test(this);
+
+        TListView.test(this);
     }
 
     @Override
